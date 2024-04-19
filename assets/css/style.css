@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&display=swap");
 /*------------------------------------------------------------------
 [Master Stylesheet]
-Project: RedLight
+Project: Premium Distribution
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 [Table of contents]
@@ -489,19 +489,19 @@ align-items: baseline;
   margin-right: 0;
 }
 /* dropdown */
-.redlight-dropdown a{
+.premium-dropdown a{
   color: var(--e-global-color-white) !important;
 }
-.redlight-dropdown a:hover {
+.premium-dropdown a:hover {
   color: var(--e-global-color-red) !important;
 }
-.dropdown-content-redlight ul li a{
+.dropdown-content-premium ul li a{
   color: var(--e-global-color-white-banner-text);
   line-height: 16px;
   padding: 12px 11px !important;
   width: 159px;
 }
-.dropdown-content-redlight ul li a:hover{
+.dropdown-content-premium ul li a:hover{
   background:var(--e-global-color-red) !important;
   color: var(--e-global-color-white) !important;
 }
@@ -509,11 +509,11 @@ align-items: baseline;
   text-decoration: none;
   background-color:transparent;
 }
-.dropdown-content-redlight ul li{
+.dropdown-content-premium ul li{
   margin-left: 0 !important;
 }
-.redlight-dropdown .dropdown-content-redlight{
-  background:#5B1213;
+.premium-dropdown .dropdown-content-premium{
+  background:#044280;
   width: 100%;
 }
 .dropdown-item.active, .dropdown-item:active {
@@ -1800,6 +1800,6 @@ color: var(--e-global-color-about-teams-red);
 .footer-content1 figure a{
   text-decoration: none;
 }
-.dropdown-content-redlight ul li a{
+.dropdown-content-premium ul li a{
   font-size: 16px;
 }
