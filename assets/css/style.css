@@ -24,7 +24,7 @@ body {
 :root {
   --e-global-color-white: #ffffff;
   --e-global-color-red: #044280;
-  --e-global-color-btn-red: #0d5b90;;
+  --e-global-color-btn-red: #0d5b90;
   --e-global-color-white-banner-text: #fffefe;
   --e-global-color-grey-icons: #999999;
   --e-global-color-yellow-buttons: #0d5b90;
@@ -715,7 +715,12 @@ align-items: baseline;
   padding: 0px 0 50px 0;
   background: var(--e-global-color-dark-icons-background);
 }
-.logo-box figure img {
+.logo-box figure img{
+  /* filter: brightness(0) invert(1); */
+  filter: saturate(0);
+  max-width: 150px;
+}
+.logo-box figure img:hover {
   filter: brightness(0) invert(1);
 }
 
@@ -1360,7 +1365,8 @@ color: var(--e-global-color-about-teams-red);
   border-bottom-right-radius:10px;
 }
 /* Footer */
-.footer-section{
+.footer-section{padding-top: 7rem;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
