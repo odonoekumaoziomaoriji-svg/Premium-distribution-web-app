@@ -307,9 +307,9 @@ align-items: baseline;
     color: var(--e-global-color-grey-icons);
 }
 
-.clients-section .clients-outer-box ul li{
- /* display: inline; */
-}
+/* .clients-section .clients-outer-box ul li{
+ display: inline;
+} */
 .clients-section .clients-outer-box ul li i{
   color: var(--e-global-color-stars);
   letter-spacing: -4px;
