@@ -257,10 +257,18 @@ align-items: baseline;
   border-radius: 11px;
   border-bottom: 3px solid var(--e-global-color-black-cards-bacground);
 }
+
+
 .clients-section .clients-outer-box .clients-outer-box-figure{
   float: left;
   margin-bottom: 0;
   margin-right: 20px;
+}
+
+.clients-outer-box-figure img{
+  width: 90px;
+  height: 70px;
+
 }
 .clients-section .clients-outer-box .clients-sectionp2{
   padding: 0 0px 0 2px;
@@ -292,8 +300,15 @@ align-items: baseline;
   padding-top: 20px;
   margin-bottom: 49px;
 }
+.clients-section .clients-outer-box ul {
+  list-style-type: disc;
+  font-size: 18px;
+    font-weight: 400;
+    color: var(--e-global-color-grey-icons);
+}
+
 .clients-section .clients-outer-box ul li{
-  display: inline;
+ /* display: inline; */
 }
 .clients-section .clients-outer-box ul li i{
   color: var(--e-global-color-stars);
@@ -1690,7 +1705,7 @@ color: var(--e-global-color-about-teams-red);
   right: -396px;
 }
 .clients-testimonial-page{
-  padding:0px 0 0px;
+  padding:100px 0 0px;
   background: var(--e-global-color-dark-icons-background);
   background-image: linear-gradient( 142deg, var(--e-global-color-dark-marron) 5%, var(--e-global-color-dark-icons-background) 20% );
 }
