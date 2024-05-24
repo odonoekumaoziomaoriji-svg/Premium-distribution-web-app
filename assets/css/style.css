@@ -203,12 +203,13 @@ align-items: baseline;
   padding: 15px 33px;
   margin-left: 8px;
   background: transparent !important;
-  border: 1px solid var(--e-global-color-grey-cyber-box);
+  border: 1px solid #191919;
   margin-left: 9px;
 }
+
 .about-us-section-page .discover-btn-banner .play-button:hover {
-  background:var(--e-global-color-btn-red)!important;
-  border: 1px solid var(--e-global-color-btn-red);
+  background:#191919!important;
+  border: 1px solid #191919;
 }
 .about-us-section-page .about-section-img{
   margin-left: -40px;

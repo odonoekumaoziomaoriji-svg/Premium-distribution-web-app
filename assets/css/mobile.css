@@ -1483,6 +1483,8 @@
   
     .about-us-section-page .about-section-img figure img {
       width: 392px;
+      padding-left: 0;
+      padding-top: 0;
     }
   
     .about-us-section-page {
