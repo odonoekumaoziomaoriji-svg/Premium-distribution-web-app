@@ -529,8 +529,9 @@ align-items: baseline;
   margin-left: 0 !important;
 }
 .premium-dropdown .dropdown-content-premium{
-  background:#044280;
-  width: 100%;
+  background:rgb(4, 66, 128);
+  width: 250%;
+  z-index: 1;
 }
 .dropdown-item.active, .dropdown-item:active {
   color:var(--e-global-color-white-banner-text) !important;
