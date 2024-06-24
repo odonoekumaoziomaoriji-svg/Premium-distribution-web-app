@@ -38,7 +38,7 @@ let people = [
   {
     photo:
       "url('https://thenationonlineng.net/wp-content/uploads/2020/05/TAJBank.png')",
-    name: "TAJ Bank",
+    name: "TAJ BANK",
     profession: "Commercial Bank",
     description:
       "Privilege Access Management Solution",
