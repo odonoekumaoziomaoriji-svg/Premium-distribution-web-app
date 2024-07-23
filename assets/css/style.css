@@ -1992,3 +1992,14 @@ color: var(--e-global-color-about-teams-red);
 		width: 100%;
 	}
 }
+
+.prtg-vendor-img-styling {filter: brightness(0.5);}
+.prtg-vendor-img-styling:hover {
+  filter: none;
+  color: var(--e-global-color-red-border)
+}
+
+.prtg-vendor-header-styling{
+  font-size: 30px;
+  color: var(--e-global-color-coming-soon);
+}
