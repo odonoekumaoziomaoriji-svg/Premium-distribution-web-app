@@ -46,7 +46,7 @@ let people = [
 
   {
     photo:
-      "url('https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/417913790_364952129619311_359540591408929068_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TQQrx9zrzZ0Q7kNvgH9QONm&_nc_ht=scontent-los2-1.xx&oh=00_AYA7JRkUrldsPlckJS2qTkMZyetoUpJprc1jNp20FMkBMA&oe=667F4297')",
+      "url('/assets/images/bodiva.jpg')",
     name: "OPTIMUS BANK",
     profession: "Commercial Bank",
     description:
