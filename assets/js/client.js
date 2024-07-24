@@ -23,7 +23,7 @@ let people = [
     photo:
       "url('./assets/images/ecowas400.jpg')",
     name: "ECOWAS",
-    profession: "Regional Econommic Union",
+    profession: "Regional Economic Union",
     description: "Network Monitoring Solution",
   },
 
@@ -46,7 +46,7 @@ let people = [
 
   {
     photo:
-      "url('/assets/images/bodiva.jpg')",
+      "url('./assets/images/optimus-white.jpg')",
     name: "OPTIMUS BANK",
     profession: "Commercial Bank",
     description:
