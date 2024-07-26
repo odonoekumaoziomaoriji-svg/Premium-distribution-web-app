@@ -1423,11 +1423,11 @@ color: var(--e-global-color-about-teams-red);
   line-height: 24px;
   font-weight: 400;
   color: var(--e-global-color-grey-cyber-box);
-  margin-bottom: 36px;
+  margin-bottom: 20px;
 }
 .footer-section .teams-social-icons ul li a {
   background: var(--e-global-color-black-cards-bacground);
-  padding: 1px 8px;
+  /* padding: 1px 8px; */
   border-radius: 78px;
   margin-right: -13px;
   transition: transform ease 300ms;
@@ -1511,7 +1511,7 @@ color: var(--e-global-color-about-teams-red);
   padding-right: 7px;
 }
 .footer-section .footer-content1 .social-icons ul li .social-networks {
-  font-size: 14px;
+  font-size: 24px;
   line-height: 14px;
 }
 /* images-animation */
