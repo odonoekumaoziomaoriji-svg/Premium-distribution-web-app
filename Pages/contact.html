@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Premium Distribution</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description"
+        content="Contact Premium Distribution — get in touch with our team for cybersecurity, infrastructure and digital transformation solutions." />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/tech-hero.css" />
+    <link rel="stylesheet" href="../assets/css/mobile.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8LzE1NXN5L9c2zBQ07pWZJ2BqB4b1+J7RZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        :root {
+            --pd-dark-1: #0f2d5c;
+            --pd-dark-2: #1e4e8c;
+            --pd-dark-3: #081a35;
+            --pd-light-1: #faf7f2;
+            --pd-gold: #c9a24a;
+            --pd-yellow-1: #f5c518;
+            --pd-yellow-2: #d8a000;
+            --pd-body-light: #6b6b6b;
+            --pd-body-dark: #cfd8e3;
+            --pd-border-light: #ece5d8;
+        }
+
+        /* Page header */
+        .page-header-simple {
+            background: linear-gradient(109deg, #1e4e8c 17%, #0f2d5c 46%);
+            padding: 90px 0 80px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header-simple::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--pd-gold), transparent);
+        }
+        .page-header-simple .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--pd-gold);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .page-header-simple h1 {
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 700;
+            margin: 0 auto 14px;
+            line-height: 1.15;
+            max-width: 900px;
+        }
+        .page-header-simple p {
+            max-width: 720px;
+            margin: 0 auto;
+            opacity: .9;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: var(--pd-light-1);
+            padding: 80px 0;
+        }
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+        }
+        @media (max-width: 991px) {
+            .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+        }
+
+        .contact-info .section-kicker {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: var(--pd-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .contact-info h2 {
+            font-size: clamp(26px, 3.2vw, 38px);
+            color: var(--pd-dark-1);
+            font-weight: 700;
+            margin: 0 0 14px;
+            line-height: 1.2;
+        }
+        .contact-info > p {
+            color: var(--pd-body-light);
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0 0 26px;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 26px;
+        }
+        .contact-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--pd-border-light);
+        }
+        .contact-list li:last-child { border-bottom: none; }
+        .contact-list .ci-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 42px;
+            background: linear-gradient(135deg, var(--pd-yellow-1), var(--pd-yellow-2));
+            box-shadow: 0 6px 14px rgba(217, 164, 0, 0.28);
+            color: #1a1400;
+        }
+        .contact-list .ci-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--pd-body-light);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        .contact-list .ci-value {
+            font-size: 15px;
+            color: var(--pd-dark-1);
+            font-weight: 600;
+        }
+        .contact-list .ci-value a {
+            color: var(--pd-dark-1);
+            text-decoration: none;
+            transition: color .25s ease;
+        }
+        .contact-list .ci-value a:hover { color: var(--pd-gold); }
+
+        .contact-socials {
+            display: flex;
+            gap: 10px;
+        }
+        .contact-socials a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 1px solid var(--pd-border-light);
+            color: var(--pd-dark-1);
+            text-decoration: none;
+            transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+        }
+        .contact-socials a:hover {
+            transform: translateY(-2px);
+            background: var(--pd-gold);
+            color: #fff;
+            border-color: var(--pd-gold);
+        }
+
+        /* Form card */
+        .contact-form-card {
+            background: #fff;
+            border: 1px solid var(--pd-border-light);
+            border-radius: 16px;
+            padding: 36px 32px;
+            box-shadow: 0 8px 28px rgba(15, 45, 92, 0.06);
+        }
+        @media (max-width: 575px) { .contact-form-card { padding: 26px 22px; } }
+        .contact-form-card h3 {
+            font-size: 20px;
+            color: var(--pd-dark-1);
+            margin: 0 0 6px;
+            font-weight: 700;
+        }
+        .contact-form-card .sub {
+            font-size: 14px;
+            color: var(--pd-body-light);
+            margin: 0 0 24px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        @media (max-width: 575px) { .form-row { grid-template-columns: 1fr; } }
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 14px;
+        }
+        .form-field label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--pd-body-light);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--pd-border-light);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--pd-dark-1);
+            background: #fff;
+            transition: border-color .25s ease, box-shadow .25s ease;
+            font-family: inherit;
+        }
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--pd-gold);
+            box-shadow: 0 0 0 3px rgba(201, 162, 74, 0.18);
+        }
+        .form-field textarea { resize: vertical; min-height: 130px; }
+        .form-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            color: #1a1400;
+            background: linear-gradient(135deg, var(--pd-yellow-1), var(--pd-yellow-2));
+            box-shadow: 0 8px 20px rgba(217, 164, 0, 0.3);
+            cursor: pointer;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(217, 164, 0, 0.4);
+        }
+
+        /* Map */
+        .map-section {
+            background: var(--pd-light-1);
+            padding: 0 0 70px;
+        }
+        .map-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--pd-border-light);
+            box-shadow: 0 8px 28px rgba(15, 45, 92, 0.06);
+            line-height: 0;
+        }
+        .map-wrap iframe {
+            width: 100%;
+            height: 380px;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 575px) { .map-wrap iframe { height: 280px; } }
+    </style>
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+
+    <!-- HEADER (matches homepage) -->
+    <div class="home-header-section">
+        <header class="header">
+            <div class="main-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <a class="navbar-brand pt-0" href="../index.html">
+                            <img decoding="async" fetchpriority="high" src="../assets/images/PremiumLogo-test-copy.png"
+                                 alt="Premium Distribution logo"
+                                 style="max-width: 150px;"
+                                 class="img-fluid diverge-logo" />
+                        </a>
+
+                        <button class="navbar-toggler" type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="about.html">Why Premium Distribution</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="Bepartner.html">Vendors</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown premium-dropdown">
+                                    <a class="nav-link dropdown-toggle navbar-text-color" href="#"
+                                       id="navbarDropdown2" role="button"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">Solutions</a>
+                                    <div class="dropdown-menu dropdown-content-premium blogs-section-drop-down"
+                                         aria-labelledby="navbarDropdown2">
+                                        <a class="dropdown-item fierce-menu" href="governance-risk-compliance.html">Governance, Risk &amp; Compliance (GRC)</a>
+                                        <a class="dropdown-item fierce-menu" href="application-security-testing.html">Application Security Testing</a>
+                                        <a class="dropdown-item fierce-menu" href="it-operations-management.html">IT Operations Management</a>
+                                        <a class="dropdown-item fierce-menu" href="privilege-access-management.html">Privileged Access Management</a>
+                                        <a class="dropdown-item fierce-menu" href="identity-access-management.html">Identity Access Management</a>
+                                        <a class="dropdown-item fierce-menu" href="mobile-device-management.html">Mobile Device Management</a>
+                                        <a class="dropdown-item fierce-menu" href="endpoint-management.html">Endpoint Management</a>
+                                        <a class="dropdown-item fierce-menu" href="application-delivery-network.html">Application Delivery Network</a>
+                                        <a class="dropdown-item fierce-menu" href="network-monitoring.html">Network Monitoring</a>
+                                        <a class="dropdown-item fierce-menu" href="network-security.html">Network Security</a>
+                                        <a class="dropdown-item fierce-menu" href="web-application-firewall.html">Web Application Firewall</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="btn-talk ml-auto">
+                                <a class="nav-link contact" href="contact.html">Contact Us</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header-simple">
+        <div class="container">
+            <span class="eyebrow">Get in Touch</span>
+            <h1>Contact Us</h1>
+            <p>Drop us a message for any query. Our team will get back to you within one business day.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- LEFT: contact info -->
+                <div class="contact-info" data-aos="fade-up">
+                    <span class="section-kicker">HOW TO REACH US</span>
+                    <h2>Drop Us a Message for Any Query</h2>
+                    <p>Whether you need to discuss a specific vendor, explore a solution, or simply have a
+                        question — our team is here to help.</p>
+
+                    <ul class="contact-list">
+                        <li>
+                            <span class="ci-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <div>
+                                <div class="ci-label">Where We Are</div>
+                                <div class="ci-value">14A Bayo Dejonwo Street,<br>Maryland, Lagos 100211, Nigeria</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci-icon"><i class="fas fa-phone-alt"></i></span>
+                            <div>
+                                <div class="ci-label">Phone</div>
+                                <div class="ci-value"><a href="tel:+2348021200006">+234 802 1200 006</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ci-icon"><i class="fas fa-envelope"></i></span>
+                            <div>
+                                <div class="ci-label">Email</div>
+                                <div class="ci-value"><a href="mailto:info@premiumdistis.com">info@premiumdistis.com</a></div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/company/premiumdistis/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: form -->
+                <div class="contact-form-card" data-aos="fade-up">
+                    <h3>Send Us a Message</h3>
+                    <p class="sub">Fill in the form and our team will be in touch shortly.</p>
+
+                    <form method="POST" action="https://getform.io/f/aejyzjnb">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="cf-name">Your Name</label>
+                                <input type="text" id="cf-name" name="name" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="cf-email">Your Email</label>
+                                <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="cf-subject">Subject</label>
+                            <input type="text" id="cf-subject" name="subject" placeholder="How can we help?" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="cf-message">Your Message</label>
+                            <textarea id="cf-message" name="comments" placeholder="Tell us what you're working on..."></textarea>
+                        </div>
+
+                        <input type="hidden" name="_gotcha" style="display:none !important">
+
+                        <button type="submit" class="form-submit">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-wrap" data-aos="fade-up">
+                <iframe
+                    src="https://www.google.com/maps?q=14A+Bayo+Dejonwo+Street,+Maryland,+Lagos,+Nigeria&output=embed"
+                    title="Premium Distribution — Head Office, Maryland, Lagos"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSTANT SECTION 1 — PRODUCT CATALOGUE -->
+    <section class="reference-catalogue">
+        <div class="container">
+            <div class="catalogue-layout">
+                <div class="catalogue-visual" data-reveal>
+                    <div class="catalogue-screen">
+                        <img loading="lazy" decoding="async" src="../assets/images/PremiumLogo-dark.png" alt="Premium Distribution">
+                        <strong>Technology Solutions<br>Catalogue</strong>
+                        <small>Secure. Connect. Grow.</small>
+                        <span class="catalogue-glow"></span>
+                    </div>
+                </div>
+                <div class="catalogue-copy" data-reveal>
+                    <p class="section-kicker">PRODUCT CATALOGUE</p>
+                    <h2>Explore Our Digital<br>Solutions Catalogue</h2>
+                    <p>Get detailed information on our solution portfolio, product specifications, and vendor
+                        offerings — all in one place.</p>
+                    <a class="reference-gold-button"
+                       href="../assets/downloads/premium-distribution-profile-2026.pptx"
+                       download="Premium-Distribution-Profile-2026.pptx">
+                        <i class="fas fa-download"></i> Download Catalogue (PPTX)
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a class="preview-link" href="digital-solution.html">
+                        <i class="fas fa-eye"></i> Preview Catalogue
+                    </a>
+                </div>
+                <ul class="catalogue-benefits" data-reveal>
+                    <li><i class="far fa-file-alt"></i><span><b>Solution overviews</b>Understand our offerings at a glance.</span></li>
+                    <li><i class="fas fa-shield-alt"></i><span><b>Product specifications</b>Get detailed technical information.</span></li>
+                    <li><i class="far fa-handshake"></i><span><b>Vendor information</b>Trusted global technology brands.</span></li>
+                    <li><i class="far fa-check-circle"></i><span><b>Use cases &amp; benefits</b>See real-world impact.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER LOGOS -->
+    <section class="reference-customers" aria-labelledby="customer-logos-title">
+        <div class="container">
+            <div class="customer-logos-layout">
+                <div class="customer-logos-intro" data-reveal>
+                    <p class="section-kicker">OUR CUSTOMERS</p>
+                    <h2 id="customer-logos-title">Trusted by Leading<br>Organisations.</h2>
+                    <p>Businesses, financial institutions and public-sector organisations across Africa trust our
+                        technology solutions and support.</p>
+                </div>
+    
+                <div class="customer-logo-list" data-reveal aria-label="Premium Distribution customers">
+                    <div class="customer-logo-track">
+                        <div class="customer-logo-set">
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt="GTBank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt="IITA"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt="Optimus Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt="TAJ Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt="Bodiva"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt="ECOWAS"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/first-atlantic.png" alt="First Atlantic Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/orange-bank.png" alt="Orange Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/sanlam.png" alt="Sanlam"></div>
+                        </div>
+                        <div class="customer-logo-set" aria-hidden="true">
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/first-atlantic.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/orange-bank.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/sanlam.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSTANT SECTION 3 — FOOTER -->
+    <footer class="reference-footer">
+        <div class="container">
+            <div class="reference-footer-top">
+                <a href="../index.html">
+                    <img loading="lazy" decoding="async" src="../assets/images/PremiumLogo-dark.png" alt="Premium Distribution logo">
+                </a>
+                <span>Technology Distribution &amp; Cybersecurity</span>
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html#solutions">Solutions</a>
+                    <a href="Bepartner.html">Vendors</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div>
+                    <a href="https://www.linkedin.com/company/premiumdistis/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="reference-footer-bottom">
+                <span>&copy; 2026 Premium Distribution. All rights reserved.</span>
+                <span>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/custom-script.js"></script>
+    <script src="../assets/js/vanilla-navigation.js"></script>
+    <script src="../assets/js/owl.carousel.js"></script>
+    <script src="../assets/js/text-animations.js"></script>
+    <script src="../assets/js/client.js"></script>
+    <script src="../assets/js/premium-scroll.js"></script>
+    <script defer src="../assets/js/ai-widget.js"></script>
+
+    <!-- Active nav-link -->
+    <script>
+        (function () {
+            var path = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (!href || href === '#' || /^https?:/.test(href)) return;
+                if (href.split('/').pop() === path) {
+                    link.closest('.nav-item').classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

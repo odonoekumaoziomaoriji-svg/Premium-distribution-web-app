@@ -1,40 +1,52 @@
-  
-           $(document).ready(function() {
+(function () {
+    function animateCounter(counter) {
+        var target = Number(counter.textContent.replace(/[^0-9.-]/g, ''));
+        var duration = 1200;
+        var startTime = null;
 
-            var counters = $(".count");
-            var countersQuantity = counters.length;
-            var counter = [];
-            
-            for (i = 0; i < countersQuantity; i++) {
-              counter[i] = parseInt(counters[i].innerHTML);
-            }
-            
-            var count = function(start, value, id) {
-              var localStart = start;
-              setInterval(function() {
-                if (localStart < value) {
-                  localStart++;
-                  counters[id].innerHTML = localStart;
+        if (!Number.isFinite(target) || counter.dataset.countStarted) return;
+
+        counter.dataset.countStarted = 'true';
+
+        function update(timestamp) {
+            if (!startTime) startTime = timestamp;
+
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            counter.textContent = Math.ceil(target * progress);
+
+            if (progress < 1) requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    function initialiseCounters() {
+        var counters = document.querySelectorAll('.count');
+
+        if (!counters.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+            counters.forEach(animateCounter);
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
                 }
-              }, 40);
-            }
-            
-            for (j = 0; j < countersQuantity; j++) {
-              count(0, counter[j], j);
-            }
             });
+        }, { rootMargin: '150px 0px' });
 
+        counters.forEach(function (counter) {
+            observer.observe(counter);
+        });
+    }
 
-            
-  $('.count').each(function () {
-         $(this).prop('Counter',0).animate({
-         Counter: $(this).text()
-         }, {
-         duration: 3300,
-         easing: 'swing',
-         step: function (now) {
-             $(this).text(Math.ceil(now));
-         }
-         });
-         });
-         /*******/
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialiseCounters, { once: true });
+    } else {
+        initialiseCounters();
+    }
+}());

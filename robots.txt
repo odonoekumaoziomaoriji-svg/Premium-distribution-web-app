@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /scripts/
+Allow: /public/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Sitemap: https://www.premiumdistis.com/sitemap.xml
+
+16-05-31-139

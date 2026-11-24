@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity | Premium Distribution</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description"
+        content="Premium Distribution Cybersecurity — protect your people, data and infrastructure with PAM, Network Security, WAF, DLP, Cloud Security and Patch Management solutions, plus assessments, threat intelligence and 24/7 incident response." />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/tech-hero.css" />
+    <link rel="stylesheet" href="../assets/css/mobile.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8LzE1NXN5L9c2zBQ07pWZJ2BqB4b1+J7RZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        :root {
+            --pd-dark-1: #0f2d5c;
+            --pd-dark-2: #1e4e8c;
+            --pd-dark-3: #081a35;
+            --pd-light-1: #faf7f2;
+            --pd-gold: #c9a24a;
+            --pd-yellow-1: #f5c518;
+            --pd-yellow-2: #d8a000;
+            --pd-sky-text: #6fc6ea;
+            --pd-body-light: #6b6b6b;
+            --pd-body-dark: #cfd8e3;
+            --pd-border-light: #ece5d8;
+            --pd-border-dark: rgba(201, 162, 74, 0.35);
+        }
+
+        /* Page header */
+        .page-header-simple {
+            background: linear-gradient(109deg, #1e4e8c 17%, #0f2d5c 46%);
+            padding: 90px 0 80px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header-simple::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--pd-gold), transparent);
+        }
+        .page-header-simple .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--pd-gold);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .page-header-simple h1 {
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 700;
+            margin: 0 auto 16px;
+            line-height: 1.15;
+            max-width: 900px;
+        }
+        .page-header-simple p {
+            max-width: 780px;
+            margin: 0 auto;
+            opacity: .9;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* Section wrappers */
+        .section-block { padding: 70px 0; }
+        .section-block.bg-light { background: var(--pd-light-1); }
+        .section-block.bg-white { background: #fff; }
+
+        .section-block.theme-dark {
+            background: linear-gradient(180deg, var(--pd-dark-2) 0%, var(--pd-dark-1) 55%, var(--pd-dark-3) 100%);
+            color: #fff;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 40px;
+        }
+        .section-head .kicker {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: var(--pd-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .section-head h2 {
+            font-size: clamp(24px, 3vw, 34px);
+            margin: 0 0 10px;
+            font-weight: 700;
+        }
+        .section-block.theme-dark .section-head h2 { color: #fff; }
+        .section-block.theme-dark .section-head p { color: var(--pd-body-dark); }
+        .section-block.bg-light .section-head h2,
+        .section-block.bg-white .section-head h2 { color: var(--pd-dark-1); }
+        .section-block.bg-light .section-head p,
+        .section-block.bg-white .section-head p { color: var(--pd-body-light); }
+        .section-head p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Card grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+        @media (max-width: 991px) { .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 575px) { .cards-grid { grid-template-columns: 1fr; } }
+
+        .cyber-card {
+            border-radius: 14px;
+            padding: 28px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+        .cyber-card.is-visible { opacity: 1; transform: translateY(0); }
+
+        .section-block.bg-light .cyber-card,
+        .section-block.bg-white .cyber-card {
+            background: #fff;
+            border: 1px solid var(--pd-border-light);
+            box-shadow: 0 6px 18px rgba(15, 45, 92, 0.05);
+        }
+        .section-block.bg-light .cyber-card:hover,
+        .section-block.bg-white .cyber-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(15, 45, 92, 0.12);
+            border-color: #d9c18d;
+        }
+        .section-block.theme-dark .cyber-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--pd-border-dark);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        }
+        .section-block.theme-dark .cyber-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+            border-color: var(--pd-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .cyber-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--pd-yellow-1), var(--pd-yellow-2));
+            box-shadow: 0 8px 18px rgba(217, 164, 0, 0.30);
+            color: #1a1400;
+            font-size: 22px;
+        }
+        .cyber-icon img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .cyber-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+        .section-block.bg-light .cyber-card h3,
+        .section-block.bg-white .cyber-card h3 { color: var(--pd-dark-1); }
+        .section-block.theme-dark .cyber-card h3 { color: #fff; }
+
+        .cyber-card p {
+            font-size: 14.5px;
+            line-height: 1.65;
+            margin: 0 0 18px;
+            flex: 1;
+        }
+        .section-block.bg-light .cyber-card p,
+        .section-block.bg-white .cyber-card p { color: var(--pd-body-light); }
+        .section-block.theme-dark .cyber-card p { color: var(--pd-body-dark); }
+
+        .cyber-card .learn-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: .3px;
+            border-bottom: 1px solid transparent;
+            transition: color .25s ease, border-color .25s ease;
+        }
+        .section-block.bg-light .cyber-card .learn-link,
+        .section-block.bg-white .cyber-card .learn-link { color: var(--pd-dark-2); }
+        .section-block.theme-dark .cyber-card .learn-link { color: var(--pd-gold); }
+        .cyber-card .learn-link i { font-size: 11px; transition: transform .25s ease; }
+        .cyber-card .learn-link:hover {
+            color: var(--pd-gold);
+            border-bottom-color: var(--pd-gold);
+        }
+        .cyber-card .learn-link:hover i { transform: translateX(3px); }
+
+        /* Stats (dark sky-navy) */
+        .stats-dark {
+            background: linear-gradient(135deg, #102a3d 0%, #0a1e2c 100%);
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-dark::before {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--pd-sky-text), transparent);
+        }
+        .stats-dark .section-head h2 { color: #fff; }
+        .stats-dark .section-head p  { color: var(--pd-body-dark); }
+
+        .stats-dark .stat-cell {
+            text-align: center;
+            padding: 24px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(111, 198, 234, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+            transition: transform .3s ease, border-color .3s ease, background .3s ease;
+        }
+        .stats-dark .stat-cell:hover {
+            transform: translateY(-4px);
+            border-color: rgba(111, 198, 234, 0.55);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .stats-dark .stat-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--pd-yellow-1), var(--pd-yellow-2));
+            box-shadow: 0 8px 18px rgba(217, 164, 0, 0.30);
+            color: #1a1400;
+            font-size: 24px;
+        }
+        .stats-dark .stat-value {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2px;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1;
+            margin: 6px 0 6px;
+            color: var(--pd-sky-text);
+        }
+        .stats-dark .stat-value .plus {
+            font-size: .8em;
+            color: var(--pd-sky-text);
+        }
+        .stats-dark .stat-label {
+            color: #e8e8e8;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: .5px;
+            margin: 0;
+        }
+
+        /* Clients strip */
+        .clients-strip {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 18px;
+            align-items: center;
+            margin-top: 26px;
+        }
+        @media (max-width: 991px) { .clients-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 480px) { .clients-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .client-tile {
+            background: #fff;
+            border: 1px solid var(--pd-border-light);
+            border-radius: 12px;
+            padding: 20px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90px;
+            transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+        }
+        .client-tile:hover {
+            transform: translateY(-3px);
+            border-color: #d9c18d;
+            box-shadow: 0 10px 20px rgba(15, 45, 92, 0.08);
+        }
+        .client-tile img {
+            max-height: 50px;
+            max-width: 100%;
+            object-fit: contain;
+            filter: grayscale(1);
+            opacity: .8;
+            transition: filter .3s ease, opacity .3s ease;
+        }
+        .client-tile:hover img { filter: grayscale(0); opacity: 1; }
+
+        /* CTA row */
+        .article-cta {
+            max-width: 960px;
+            margin: 32px auto 0;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .article-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+        .article-cta .cta-primary {
+            background: linear-gradient(135deg, var(--pd-yellow-1), var(--pd-yellow-2));
+            color: #1a1400;
+            box-shadow: 0 8px 20px rgba(217, 164, 0, 0.3);
+        }
+        .article-cta .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(217, 164, 0, 0.4);
+        }
+        .article-cta .cta-secondary {
+            background: var(--pd-dark-1);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(15, 45, 92, 0.25);
+        }
+        .article-cta .cta-secondary:hover {
+            transform: translateY(-2px);
+            background: var(--pd-dark-2);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cyber-card, .cyber-card.is-visible,
+            .stats-dark .stat-cell { opacity: 1; transform: none; transition: none; }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+
+    <!-- HEADER (matches homepage) -->
+    <div class="home-header-section">
+        <header class="header">
+            <div class="main-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <a class="navbar-brand pt-0" href="../index.html">
+                            <img decoding="async" fetchpriority="high" src="../assets/images/PremiumLogo-test-copy.png"
+                                 alt="Premium Distribution logo"
+                                 style="max-width: 150px;"
+                                 class="img-fluid diverge-logo" />
+                        </a>
+
+                        <button class="navbar-toggler" type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="about.html">Why Premium Distribution</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="Bepartner.html">Our Brands</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="Bepartner.html">Vendors</a>
+                                </li>
+
+                                <li class="nav-item dropdown premium-dropdown">
+                                    <a class="nav-link dropdown-toggle navbar-text-color" href="#"
+                                       id="navbarDropdown2" role="button"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">Solutions</a>
+                                    <div class="dropdown-menu dropdown-content-premium blogs-section-drop-down"
+                                         aria-labelledby="navbarDropdown2">
+                                        <a class="dropdown-item fierce-menu" href="governance-risk-compliance.html">Governance, Risk &amp; Compliance (GRC)</a>
+                                        <a class="dropdown-item fierce-menu" href="application-security-testing.html">Application Security Testing</a>
+                                        <a class="dropdown-item fierce-menu" href="it-operations-management.html">IT Operations Management</a>
+                                        <a class="dropdown-item fierce-menu" href="privilege-access-management.html">Privileged Access Management</a>
+                                        <a class="dropdown-item fierce-menu" href="identity-access-management.html">Identity Access Management</a>
+                                        <a class="dropdown-item fierce-menu" href="mobile-device-management.html">Mobile Device Management</a>
+                                        <a class="dropdown-item fierce-menu" href="endpoint-management.html">Endpoint Management</a>
+                                        <a class="dropdown-item fierce-menu" href="application-delivery-network.html">Application Delivery Network</a>
+                                        <a class="dropdown-item fierce-menu" href="network-monitoring.html">Network Monitoring</a>
+                                        <a class="dropdown-item fierce-menu" href="network-security.html">Network Security</a>
+                                        <a class="dropdown-item fierce-menu" href="web-application-firewall.html">Web Application Firewall</a>
+                                        <a class="dropdown-item fierce-menu" href="Automated-Patch-Management.html">Patch Management</a>
+                                        <a class="dropdown-item fierce-menu" href="data-loss-prevention.html">Data Loss Prevention</a>
+                                        <a class="dropdown-item fierce-menu" href="cloud-security.html">Cloud Security</a>
+                                        <a class="dropdown-item fierce-menu" href="patch-management.html">Automated Patch Management</a>
+                                        <a class="dropdown-item fierce-menu" href="../index.html">Fraud Prevention</a>
+                                        <a class="dropdown-item fierce-menu" href="https://www.nextdlp.com/solutions/data-loss-protection">Data Loss Prevention</a>
+                                        <a class="dropdown-item fierce-menu" href="https://www.aquasec.com/aqua-cloud-native-security-platform/">Cloud Security</a>
+                                        <a class="dropdown-item fierce-menu" href="../index.html">Endpoint and Data Security</a>
+                                        <a class="dropdown-item fierce-menu" href="https://www.nexsan.com/">Enterprise Storage</a>
+                                        <a class="dropdown-item fierce-menu" href="https://www.nexsan.com/">Backup Archiving</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="btn-talk ml-auto">
+                                <a class="nav-link contact" href="contact.html">Contact Us</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header-simple">
+        <div class="container">
+            <span class="eyebrow">Our Cybersecurity Services</span>
+            <h1>Cybersecurity</h1>
+            <p>Protect your people, data and infrastructure with world-class cybersecurity solutions —
+                distributed, deployed and supported by Premium Distribution across Africa.</p>
+        </div>
+    </section>
+
+    <!-- SECURITY SOLUTIONS -->
+    <section class="section-block bg-light">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <span class="kicker">SECURITY SOLUTIONS</span>
+                <h2>Solutions That Defend Every Layer</h2>
+                <p>From privileged access to endpoint, from network edge to cloud — the security stack we distribute.</p>
+            </div>
+
+            <div class="cards-grid" id="solutionsGrid">
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Privileged Access Management</h3>
+                    <p>Control, monitor and audit privileged accounts to prevent insider misuse of your most
+                        critical systems.</p>
+                    <a href="privilege-access-management.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Network Security</h3>
+                    <p>Layered defenses — firewalls, segmentation, VPN, and SIEM — that protect against evolving
+                        network-borne threats.</p>
+                    <a href="network-security.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Web Application Firewall</h3>
+                    <p>Filter and monitor HTTP traffic at layer 7 to stop XSS, SQL injection, CSRF and DDoS
+                        attacks against your web apps.</p>
+                    <a href="web-application-firewall.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Data Loss Prevention</h3>
+                    <p>Monitor, detect and block unauthorized data transfers across endpoints, networks and cloud
+                        — protect your most sensitive information.</p>
+                    <a href="https://www.nextdlp.com/solutions/data-loss-protection" class="learn-link" target="_blank" rel="noopener noreferrer">Learn More <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud Security</h3>
+                    <p>Gain visibility, enforce policies and defend cloud workloads against attacks — keeping
+                        your cloud secure and resilient.</p>
+                    <a href="https://www.aquasec.com/aqua-cloud-native-security-platform/" class="learn-link" target="_blank" rel="noopener noreferrer">Learn More <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Patch Management</h3>
+                    <p>Automate patch deployment across your fleet, close vulnerabilities quickly and reduce the
+                        window of exposure to known exploits.</p>
+                    <a href="patch-management.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section-block theme-dark">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <span class="kicker">WHY CHOOSE PREMIUM DISTRIBUTION</span>
+                <h2>A Cybersecurity Partner You Can Trust</h2>
+                <p>We combine vendor depth, regional reach and hands-on support to help you build real resilience.</p>
+            </div>
+
+            <div class="cards-grid" id="whyGrid">
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Expert Team</h3>
+                    <p>Certified security engineers with hands-on experience deploying and supporting
+                        enterprise-grade solutions across finance, government and telecom.</p>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-award"></i></div>
+                    <h3>Proven Track Record</h3>
+                    <p>Years of successful deployments and a growing portfolio of reference customers across
+                        Nigeria, Ghana and beyond.</p>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock support and incident response so you're never alone when a threat hits.</p>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Compliance Focus</h3>
+                    <p>We help you meet regulatory requirements — from data protection to industry-specific
+                        frameworks — while strengthening security.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CYBERSECURITY SERVICES -->
+    <section class="section-block bg-white">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <span class="kicker">CYBERSECURITY SERVICES</span>
+                <h2>Advisory, Assessment and Response</h2>
+                <p>Services that complement our technology portfolio — the human expertise behind the tools.</p>
+            </div>
+
+            <div class="cards-grid" id="servicesGrid">
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-search"></i></div>
+                    <h3>Threat Intelligence</h3>
+                    <p>Real-time analysis, tailored reporting and proactive threat hunting so you can see the
+                        attacker before they see you.</p>
+                    <a href="services.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Security Assessment</h3>
+                    <p>Detailed evaluations, vulnerability analysis, risk management, compliance checks and
+                        prioritized remediation recommendations.</p>
+                    <a href="services.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-bug"></i></div>
+                    <h3>Compromise Assessment</h3>
+                    <p>Determine whether your environment has been breached — forensic investigation, threat
+                        identification and tailored remediation.</p>
+                    <a href="services.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                    <h3>Incident Response</h3>
+                    <p>Rapid containment, eradication and recovery when a breach occurs — minimize damage and
+                        restore operations fast.</p>
+                    <a href="services.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Security Training</h3>
+                    <p>Tailored education, personalized coaching and ongoing support — turn your people into your
+                        strongest line of defense.</p>
+                    <a href="services.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="cyber-card" data-reveal>
+                    <div class="cyber-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>Managed Security</h3>
+                    <p>24/7 monitoring, detection and response from our security operations center — SIEM, SOC
+                        and managed detection and response.</p>
+                    <a href="services.html" class="learn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+
+            <div class="article-cta">
+                <a class="cta-primary" href="contact.html">
+                    <i class="fas fa-paper-plane"></i> Talk to an Expert
+                </a>
+                <a class="cta-secondary" href="../contact.html">
+                    <i class="fas fa-file-alt"></i> Request a Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS (dark sky-navy) -->
+    <section class="stats-dark">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <span class="kicker">BY THE NUMBERS</span>
+                <h2>Cybersecurity Impact So Far</h2>
+                <p>Years of expertise, a growing partner network, and enterprise customers trusting our stack.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="stat-cell" data-aos="fade-up">
+                        <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="stat-value">
+                            <span class="counter">7</span><span class="plus">+</span>
+                        </div>
+                        <p class="stat-label">Years of Service</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="stat-cell" data-aos="fade-up">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="stat-value">
+                            <span class="counter">150</span><span class="plus">+</span>
+                        </div>
+                        <p class="stat-label">Partners</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="stat-cell" data-aos="fade-up">
+                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="stat-value">
+                            <span class="counter">20</span><span class="plus">+</span>
+                        </div>
+                        <p class="stat-label">Projects Delivered</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="stat-cell" data-aos="fade-up">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-value">
+                            <span>24/7</span>
+                        </div>
+                        <p class="stat-label">Security Operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED COMPANIES -->
+    <section class="section-block bg-light">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <span class="kicker">TRUSTED ACROSS AFRICA</span>
+                <h2>Trusted by Leading Organisations</h2>
+                <p>Financial institutions, government agencies and enterprises that rely on our security portfolio.</p>
+            </div>
+
+            <div class="clients-strip" data-aos="fade-up">
+                <div class="client-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt="GTBank"></div>
+                <div class="client-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt="IITA"></div>
+                <div class="client-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt="Optimus"></div>
+                <div class="client-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt="TAJ"></div>
+                <div class="client-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt="Bodiva"></div>
+                <div class="client-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt="ECOWAS"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSTANT SECTION 1 — PRODUCT CATALOGUE -->
+    <section class="reference-catalogue">
+        <div class="container">
+            <div class="catalogue-layout">
+                <div class="catalogue-visual" data-reveal>
+                    <div class="catalogue-screen">
+                        <img loading="lazy" decoding="async" src="../assets/images/PremiumLogo-dark.png" alt="Premium Distribution">
+                        <strong>Technology Solutions<br>Catalogue</strong>
+                        <small>Secure. Connect. Grow.</small>
+                        <span class="catalogue-glow"></span>
+                    </div>
+                </div>
+                <div class="catalogue-copy" data-reveal>
+                    <p class="section-kicker">PRODUCT CATALOGUE</p>
+                    <h2>Explore Our Digital<br>Solutions Catalogue</h2>
+                    <p>Get detailed information on our solution portfolio, product specifications, and vendor
+                        offerings — all in one place.</p>
+                    <a class="reference-gold-button"
+                       href="../assets/downloads/premium-distribution-profile-2026.pptx"
+                       download="Premium-Distribution-Profile-2026.pptx">
+                        <i class="fas fa-download"></i> Download Catalogue (PPTX)
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a class="preview-link" href="digital-solution.html">
+                        <i class="fas fa-eye"></i> Preview Catalogue
+                    </a>
+                </div>
+                <ul class="catalogue-benefits" data-reveal>
+                    <li><i class="far fa-file-alt"></i><span><b>Solution overviews</b>Understand our offerings at a glance.</span></li>
+                    <li><i class="fas fa-shield-alt"></i><span><b>Product specifications</b>Get detailed technical information.</span></li>
+                    <li><i class="far fa-handshake"></i><span><b>Vendor information</b>Trusted global technology brands.</span></li>
+                    <li><i class="far fa-check-circle"></i><span><b>Use cases &amp; benefits</b>See real-world impact.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER LOGOS -->
+    <section class="reference-customers" aria-labelledby="customer-logos-title">
+        <div class="container">
+            <div class="customer-logos-layout">
+                <div class="customer-logos-intro" data-reveal>
+                    <p class="section-kicker">OUR CUSTOMERS</p>
+                    <h2 id="customer-logos-title">Trusted by Leading<br>Organisations.</h2>
+                    <p>Businesses, financial institutions and public-sector organisations across Africa trust our
+                        technology solutions and support.</p>
+                </div>
+    
+                <div class="customer-logo-list" data-reveal aria-label="Premium Distribution customers">
+                    <div class="customer-logo-track">
+                        <div class="customer-logo-set">
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt="GTBank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt="IITA"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt="Optimus Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt="TAJ Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt="Bodiva"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt="ECOWAS"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/first-atlantic.png" alt="First Atlantic Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/orange-bank.png" alt="Orange Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/sanlam.png" alt="Sanlam"></div>
+                        </div>
+                        <div class="customer-logo-set" aria-hidden="true">
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/first-atlantic.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/orange-bank.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/sanlam.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSTANT SECTION 3 — FOOTER -->
+    <footer class="reference-footer">
+        <div class="container">
+            <div class="reference-footer-top">
+                <a href="../index.html">
+                    <img loading="lazy" decoding="async" src="../assets/images/PremiumLogo-dark.png" alt="Premium Distribution logo">
+                </a>
+                <span>Technology Distribution &amp; Cybersecurity</span>
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html#solutions">Solutions</a>
+                    <a href="Bepartner.html">Our Brands</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div>
+                    <a href="https://www.linkedin.com/company/premiumdistis/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="reference-footer-bottom">
+                <span>&copy; 2026 Premium Distribution. All rights reserved.</span>
+                <span>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/custom-script.js"></script>
+    <script src="../assets/js/vanilla-navigation.js"></script>
+    <script src="../assets/js/owl.carousel.js"></script>
+    <script src="../assets/js/text-animations.js"></script>
+    <script src="../assets/js/client.js"></script>
+    <script src="../assets/js/premium-scroll.js"></script>
+    <script defer src="../assets/js/ai-widget.js"></script>
+
+    <!-- Active nav-link + card reveal -->
+    <script>
+        (function () {
+            var path = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (!href || href === '#' || /^https?:/.test(href)) return;
+                if (href.split('/').pop() === path) {
+                    link.closest('.nav-item').classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+
+            function revealGrid(selector) {
+                var cards = document.querySelectorAll(selector + ' .cyber-card');
+                if (!cards.length) return;
+                if (!('IntersectionObserver' in window)) {
+                    cards.forEach(function (c) { c.classList.add('is-visible'); });
+                    return;
+                }
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var i = Array.prototype.indexOf.call(cards, entry.target);
+                            entry.target.style.transitionDelay = (i * 80) + 'ms';
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                cards.forEach(function (c) { io.observe(c); });
+            }
+
+            revealGrid('#solutionsGrid');
+            revealGrid('#whyGrid');
+            revealGrid('#servicesGrid');
+        })();
+    </script>
+</body>
+
+</html>

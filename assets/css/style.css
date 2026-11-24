@@ -2003,3 +2003,461 @@ color: var(--e-global-color-about-teams-red);
   font-size: 30px;
   color: var(--e-global-color-coming-soon);
 }
+
+/* --------------------------------------------------------------------------
+   Shared Premium Distribution visual system
+   Keeps every internal page aligned with the technology-led home experience.
+   -------------------------------------------------------------------------- */
+body {
+  background: #f6faff;
+  color: #173d74;
+}
+
+/* Navigation and page-intro treatment */
+.home-header-section {
+  background: radial-gradient(circle at 74% 42%, rgba(0, 177, 255, .19), transparent 29%),
+    radial-gradient(circle at 92% 100%, rgba(8, 70, 159, .42), transparent 36%),
+    linear-gradient(115deg, #020b1b 0%, #041a38 55%, #020d20 100%) !important;
+}
+.home-header-section .main-header {
+  padding-top: 22px;
+}
+.home-header-section .navbar-brand img {
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .22));
+}
+.home-header-section .navbar-nav .nav-link,
+.home-header-section .navbar-nav a {
+  color: #e8f5ff !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+.home-header-section .navbar-nav > .nav-item:not(.dropdown) > .nav-link:after {
+  background: #13c9ff;
+  bottom: 5px;
+  content: "";
+  height: 2px;
+  left: 8px;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+  width: calc(100% - 16px);
+}
+.home-header-section .navbar-nav > .nav-item:not(.dropdown):hover > .nav-link:after,
+.home-header-section .navbar-nav > .active:not(.dropdown) > .nav-link:after {
+  transform: scaleX(1);
+}
+.home-header-section .btn-talk .contact,
+.contact-section-btn a,
+.submit-now-btn,
+.contact-us-section .contact-btn {
+  background: #ffc43d !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 9px 22px rgba(255, 190, 36, .24);
+  color: #082a5d !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  padding: 13px 21px !important;
+}
+.home-header-section .dropdown-menu {
+  background: #062653;
+  border: 1px solid rgba(20, 201, 255, .44);
+  border-radius: 9px;
+  box-shadow: 0 15px 32px rgba(0, 11, 32, .36);
+  padding: 8px;
+}
+.home-header-section .dropdown-menu .dropdown-item:hover {
+  background: rgba(18, 190, 255, .16);
+  border-radius: 5px;
+}
+.home-header-section > .home-banner-section:not(.tech-hero) {
+  background: transparent !important;
+  min-height: 300px;
+  padding: 50px 0 28px;
+  position: relative;
+}
+.home-header-section > .home-banner-section:not(.tech-hero):before {
+  background-image: linear-gradient(rgba(50, 178, 255, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(50, 178, 255, .08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  content: "";
+  inset: 0;
+  opacity: .55;
+  pointer-events: none;
+  position: absolute;
+}
+.home-header-section .about-banner-text {
+  margin: 0 auto 28px;
+  max-width: 820px;
+  position: relative;
+}
+.home-header-section .about-banner-text .about-h1,
+.home-header-section .about-banner-text h1 {
+  color: #fff !important;
+  font-size: clamp(38px, 5vw, 58px) !important;
+  letter-spacing: -1.8px;
+  line-height: 1.08 !important;
+  margin-bottom: 17px;
+}
+.home-header-section .about-banner-text .banner-paragraph {
+  color: #c9dff4 !important;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* Page content cards, typography and forms */
+.about-us-section-start,
+.pricing-plan-section,
+.blog-posts,
+.contact-us-section,
+.contact-form-section,
+.whyus-section,
+.cyber-security-section {
+  background: linear-gradient(135deg, #fff 0%, #f1f8ff 100%) !important;
+}
+.about-us-section-start,
+.blog-posts,
+.cyber-security-section {
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+.about-us-section-start h2,
+.about-us-section-start h3,
+.blog-posts h1,
+.blog-posts h2,
+.blog-posts h3,
+.contact-us-section h2,
+.contact-us-section h3,
+.cyber-security-section h2,
+.cyber-security-section h3 {
+  color: #082f6b !important;
+  font-weight: 800;
+}
+.about-us-section-start p,
+.blog-posts p,
+.contact-us-section p,
+.cyber-security-section p,
+.single-post01 .post-item-description {
+  color: #58779f !important;
+}
+.about-us-content,
+.pricing-plan-section .pricing-plan-box,
+.contact-us-section .contact-form-box,
+.single-post01,
+.blog-posts .post-item-wrap {
+  background: #fff;
+  border: 1px solid #dceafa;
+  border-radius: 12px;
+  box-shadow: 0 11px 30px rgba(13, 65, 131, .08);
+}
+.about-us-content {
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.about-us-content:hover {
+  border-color: #12beff;
+  box-shadow: 0 19px 38px rgba(7, 89, 181, .16);
+  transform: translateY(-5px);
+}
+.about-us-section-2,
+.cyber-boxes-section {
+  background: radial-gradient(circle at 5% 90%, rgba(0, 163, 255, .22), transparent 27%), linear-gradient(125deg, #021936, #043f84) !important;
+}
+.about-us-section-2 h2,
+.about-us-section-2 h3,
+.about-us-section-2 h4,
+.about-us-section-2 p,
+.cyber-boxes-section h2,
+.cyber-boxes-section h3,
+.cyber-boxes-section h4,
+.cyber-boxes-section p {
+  color: #fff !important;
+}
+.about-us-section-2 .about-us-content {
+  background: rgba(4, 48, 103, .78);
+  border-color: rgba(22, 187, 255, .44);
+  box-shadow: none;
+}
+.about-us-section-2 .about-us-content p { color: #c9e2fa !important; }
+.contact-us-section input,
+.contact-us-section textarea,
+.contact-us-section select {
+  border: 1px solid #c8e1f8 !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+}
+.contact-us-section input:focus,
+.contact-us-section textarea:focus,
+.contact-us-section select:focus {
+  border-color: #0abaff !important;
+  box-shadow: 0 0 0 3px rgba(10, 186, 255, .13) !important;
+}
+.single-post01 { padding: 28px; }
+.single-post01 .post-item-description h2,
+.single-post01 .post-item-description h2 > a { color: #092f6b; }
+.single-post01 a:not(.btn) { color: #007be8; }
+
+/* Footer is deliberately shared across the entire site */
+.footer-section,
+.footer-bar {
+  background: linear-gradient(105deg, #021a3c, #052f66) !important;
+}
+.footer-section {
+  border-top: 1px solid rgba(23, 192, 255, .32);
+}
+.footer-section p,
+.footer-section li,
+.footer-section .footer-content1 p,
+.footer-section .footer-content1 a { color: #c9e2fa !important; }
+.footer-section h4,
+.footer-section h5,
+.footer-section h6 { color: #fff !important; }
+.footer-section a:hover { color: #17c9ff !important; }
+
+@media (max-width: 991px) {
+  .home-header-section .navbar-collapse {
+    background: #052653;
+    border: 1px solid rgba(28, 198, 255, .32);
+    border-radius: 8px;
+    margin-top: 12px;
+    padding: 12px 16px;
+  }
+  .home-header-section .navbar-nav li:first-child { margin-left: 0; }
+  .home-header-section > .home-banner-section:not(.tech-hero) { min-height: 255px; padding-top: 40px; }
+  .about-us-section-start, .blog-posts, .cyber-security-section { padding-top: 56px; padding-bottom: 56px; }
+}
+
+/* --------------------------------------------------------------------------
+   2026 blue + yellow redesign — deliberately flat, open and card-free.
+   -------------------------------------------------------------------------- */
+:root {
+  --premium-blue: #0874cb;
+  --premium-blue-deep: #0874cb;
+  --premium-sky: #1ac4e4;
+  --premium-pale: #edf8ff;
+  --premium-yellow: #ffd23f;
+  --premium-ink: #12477e;
+  --home-gradient: linear-gradient(118deg, #0874cb 0%, #0aa9dc 62%, #1ac4e4 100%);
+}
+body { background: #fff; color: var(--premium-ink); }
+body:before {
+  background: linear-gradient(90deg, rgba(8, 117, 207, .035) 1px, transparent 1px), linear-gradient(rgba(8, 117, 207, .035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
+/* A bright blue navigation and fluid page introduction replace the old dark hero. */
+.home-header-section {
+  background: var(--home-gradient) !important;
+  overflow: hidden;
+  position: relative;
+}
+.home-header-section:after {
+  background: rgba(255, 255, 255, .12);
+  border-radius: 50%;
+  content: "";
+  height: 460px;
+  position: absolute;
+  right: -150px;
+  top: -300px;
+  width: 460px;
+}
+.home-header-section .header, .home-header-section .main-header, .home-header-section .navbar { position: relative; z-index: 2; }
+.home-header-section .navbar-nav .nav-link, .home-header-section .navbar-nav a { color: #fff !important; }
+.home-header-section .btn-talk .contact,
+.contact-section-btn a, .submit-now-btn, .contact-us-section .contact-btn {
+  background: var(--premium-yellow) !important;
+  box-shadow: none !important;
+  color: #12477e !important;
+}
+.home-header-section .dropdown-menu { background: #fff; border: 0; border-radius: 0; box-shadow: 0 14px 28px rgba(5, 94, 169, .16); }
+.home-header-section .dropdown-menu .dropdown-item { color: #14538e !important; }
+.home-header-section .dropdown-menu .dropdown-item:hover { background: #edf8ff; color: #0875cf !important; }
+.home-header-section > .home-banner-section:not(.tech-hero) {
+  min-height: 355px;
+  padding: 72px 0 58px;
+}
+.home-header-section > .home-banner-section:not(.tech-hero):before { background-image: none; }
+.home-header-section .about-banner-text { max-width: 900px; }
+.home-header-section .about-banner-text:before {
+  background: var(--premium-yellow);
+  content: "";
+  display: block;
+  height: 5px;
+  margin: 0 auto 25px;
+  width: 62px;
+}
+.home-header-section .about-banner-text .about-h1,
+.home-header-section .about-banner-text h1 { font-weight: 800; letter-spacing: -2.4px; }
+.home-header-section .about-banner-text .banner-paragraph { color: #effcff !important; }
+
+/* Alternate wide, editorial bands rather than isolated content cards. */
+.about-us-section-start, .pricing-plan-section, .blog-posts, .contact-us-section, .contact-form-section, .whyus-section, .cyber-security-section {
+  background: #fff !important;
+  padding-bottom: 94px !important;
+  padding-top: 94px !important;
+  position: relative;
+}
+.about-us-section-start:nth-of-type(even), .cyber-security-section2, .blog-posts { background: var(--premium-pale) !important; }
+.about-us-section-start h2, .about-us-section-start h3, .blog-posts h1, .blog-posts h2, .blog-posts h3, .contact-us-section h2, .contact-us-section h3, .cyber-security-section h2, .cyber-security-section h3 {
+  color: var(--premium-blue-deep) !important;
+  letter-spacing: -1.3px;
+}
+.about-us-section-start > .container > .row:first-child > div > h3:after,
+.cyber-security-section .cyber-content h3:after {
+  background: var(--premium-yellow);
+  content: "";
+  display: block;
+  height: 4px;
+  margin-top: 17px;
+  width: 54px;
+}
+.about-us-section-start p, .blog-posts p, .contact-us-section p, .cyber-security-section p, .single-post01 .post-item-description { color: #4d759c !important; }
+.about-us-content, .pricing-plan-section .pricing-plan-box, .contact-us-section .contact-form-box, .single-post01, .blog-posts .post-item-wrap {
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 3px solid #b8e9f6 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 24px !important;
+}
+.about-us-content:hover { border-color: var(--premium-yellow) !important; box-shadow: none !important; transform: translateX(7px); }
+.about-us-content h4 { color: var(--premium-blue-deep) !important; }
+.about-us-content a, .single-post01 a:not(.btn) { color: var(--premium-blue) !important; }
+.icons-rounded-box {
+  background: var(--premium-yellow) !important;
+  border-radius: 50% !important;
+  height: 52px !important;
+  transform: rotate(-8deg);
+  width: 52px !important;
+}
+.icons-rounded-box img { transform: rotate(8deg); }
+.cyber-content-img figure, .cyber-content-img-right figure { border-radius: 0; box-shadow: none; }
+
+/* Blue feature bands remain energetic without any black surfaces or card grid. */
+.about-us-section-2, .cyber-boxes-section, .client-slider-sec {
+  background: var(--home-gradient) !important;
+}
+.about-us-section-2:before { color: #fff5b7; }
+.about-us-section-2 .about-us-content, .cyber-boxes-section .about-us-content {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, .55) !important;
+  box-shadow: none !important;
+}
+.about-us-section-2 .about-us-content:hover { background: rgba(255,255,255,.1) !important; }
+.about-us-section-2 .icons-rounded-box { background: var(--premium-yellow) !important; border: 0 !important; }
+.cyber-boxes-section:before { opacity: .16; }
+.cyber-boxes-section .cyber-counter { color: var(--premium-yellow) !important; }
+.contact-us-section input, .contact-us-section textarea, .contact-us-section select { border-radius: 0 !important; }
+
+/* Footer continues the blue system instead of reverting to black. */
+.footer-section, .footer-bar, .reference-footer {
+  background: var(--home-gradient) !important;
+  border-top: 5px solid var(--premium-yellow) !important;
+}
+.footer-section a:hover { color: #fff5b7 !important; }
+
+@media (max-width: 991px) {
+  .home-header-section .navbar-collapse { background: #0875cf; border: 0; border-radius: 0; }
+  .home-header-section > .home-banner-section:not(.tech-hero), .about-us-section-start, .blog-posts, .cyber-security-section { padding-bottom: 58px !important; padding-top: 58px !important; }
+}
+
+/* Navigation layout fixes --------------------------------------------------
+   Keep the menu usable when Bootstrap collapses it, rather than limiting it
+   to the narrow legacy 27% panel defined in mobile.css. */
+.home-header-section .navbar {
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .home-header-section .navbar-nav li:first-child {
+    margin-left: clamp(24px, 5vw, 82px);
+  }
+}
+
+@media (max-width: 991px) {
+  .home-header-section .navbar-collapse {
+    background: #0875cf;
+    border: 0;
+    border-radius: 0;
+    left: 0;
+    margin-top: 12px;
+    padding: 10px 0;
+    right: 0;
+    top: 100%;
+    width: auto;
+  }
+
+  .home-header-section .navbar-collapse .nav-link,
+  .home-header-section .navbar-collapse .btn-talk a {
+    color: #fff !important;
+    display: block;
+    height: auto;
+    padding: 13px 20px !important;
+    text-align: left;
+  }
+
+  .home-header-section .navbar-collapse .btn-talk a {
+    background: transparent !important;
+    font-weight: 600;
+  }
+
+  .home-header-section .navbar-collapse .nav-link:hover,
+  .home-header-section .navbar-collapse .nav-link:focus,
+  .home-header-section .navbar-collapse .btn-talk a:hover,
+  .home-header-section .navbar-collapse .btn-talk a:focus {
+    background: rgba(255, 255, 255, .16) !important;
+    color: #fff !important;
+  }
+
+  .home-header-section .navbar-collapse .dropdown-menu {
+    box-shadow: none;
+    margin: 0;
+  }
+}
+
+/* Solutions menu: keep every link visible and align it with the site palette. */
+.home-header-section {
+  overflow: visible;
+}
+
+.home-header-section .premium-dropdown .dropdown-content-premium {
+  background: var(--premium-yellow);
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 14px 28px rgba(5, 94, 169, .2);
+  min-width: 310px;
+  padding: 8px;
+  width: max-content;
+  z-index: 1080;
+}
+
+.home-header-section .premium-dropdown .dropdown-content-premium .dropdown-item {
+  color: var(--premium-ink) !important;
+  font-weight: 700;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.home-header-section .premium-dropdown .dropdown-content-premium .dropdown-item:hover,
+.home-header-section .premium-dropdown .dropdown-content-premium .dropdown-item:focus {
+  background: var(--premium-ink);
+  color: #fff !important;
+}
+
+@media (max-width: 991px) {
+  .home-header-section .premium-dropdown .dropdown-content-premium {
+    min-width: 0;
+    padding: 4px 12px 8px;
+    width: 100%;
+  }
+
+  .home-header-section .premium-dropdown .dropdown-content-premium .dropdown-item {
+    white-space: normal;
+  }
+}

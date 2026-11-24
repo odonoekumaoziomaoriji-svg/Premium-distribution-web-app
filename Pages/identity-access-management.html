@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identity Access Management | Premium Distribution</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicons/android-chrome-192x192.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description"
+        content="Identity and Access Management (IAM) — understand how role-based access control, authentication and centralized identity governance help enterprises secure data and manage digital identities." />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/tech-hero.css" />
+    <link rel="stylesheet" href="../assets/css/mobile.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8LzE1NXN5L9c2zBQ07pWZJ2BqB4b1+J7RZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        :root {
+            --pd-dark-1: #0f2d5c;
+            --pd-dark-2: #1e4e8c;
+            --pd-dark-3: #081a35;
+            --pd-light-1: #faf7f2;
+            --pd-gold: #c9a24a;
+            --pd-yellow-1: #f5c518;
+            --pd-yellow-2: #d8a000;
+            --pd-body-light: #6b6b6b;
+            --pd-body-dark: #cfd8e3;
+            --pd-border-light: #ece5d8;
+        }
+
+        /* Page header */
+        .page-header-simple {
+            background: linear-gradient(109deg, #1e4e8c 17%, #0f2d5c 46%);
+            padding: 90px 0 80px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header-simple::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--pd-gold), transparent);
+        }
+        .page-header-simple .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--pd-gold);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .page-header-simple h1 {
+            font-size: clamp(28px, 4vw, 46px);
+            font-weight: 700;
+            margin: 0 auto;
+            line-height: 1.2;
+            max-width: 900px;
+        }
+
+        /* Article */
+        .article-section {
+            background: var(--pd-light-1);
+            padding: 70px 0 70px;
+        }
+        .article-card {
+            background: #fff;
+            border: 1px solid var(--pd-border-light);
+            border-radius: 16px;
+            padding: 40px 40px 36px;
+            box-shadow: 0 8px 28px rgba(15, 45, 92, 0.06);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        @media (max-width: 767px) {
+            .article-card { padding: 28px 22px; }
+        }
+        .article-hero-img {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--pd-border-light);
+            margin-bottom: 28px;
+            aspect-ratio: 16 / 8;
+            background: #f0f0f0;
+        }
+        .article-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .article-card h2 {
+            color: var(--pd-dark-1);
+            font-weight: 700;
+            font-size: clamp(22px, 2.6vw, 30px);
+            margin: 0 0 18px;
+            line-height: 1.3;
+        }
+        .article-card p {
+            color: var(--pd-body-light);
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0 0 18px;
+            white-space: pre-line;
+        }
+        .article-card p:last-child { margin-bottom: 0; }
+
+        /* CTA row */
+        .article-cta {
+            max-width: 960px;
+            margin: 32px auto 0;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .article-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+        .article-cta .cta-primary {
+            background: linear-gradient(135deg, var(--pd-yellow-1), var(--pd-yellow-2));
+            color: #1a1400;
+            box-shadow: 0 8px 20px rgba(217, 164, 0, 0.3);
+        }
+        .article-cta .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(217, 164, 0, 0.4);
+        }
+        .article-cta .cta-secondary {
+            background: var(--pd-dark-1);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(15, 45, 92, 0.25);
+        }
+        .article-cta .cta-secondary:hover {
+            transform: translateY(-2px);
+            background: var(--pd-dark-2);
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+
+    <!-- HEADER (matches homepage) -->
+    <div class="home-header-section">
+        <header class="header">
+            <div class="main-header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <a class="navbar-brand pt-0" href="../index.html">
+                            <img decoding="async" fetchpriority="high" src="../assets/images/PremiumLogo-test-copy.png"
+                                 alt="Premium Distribution logo"
+                                 style="max-width: 150px;"
+                                 class="img-fluid diverge-logo" />
+                        </a>
+
+                        <button class="navbar-toggler" type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="about.html">Why Premium Distribution</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-text-color" href="Bepartner.html">Vendors</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown premium-dropdown">
+                                    <a class="nav-link dropdown-toggle navbar-text-color" href="#"
+                                       id="navbarDropdown2" role="button"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">Solutions</a>
+                                    <div class="dropdown-menu dropdown-content-premium blogs-section-drop-down"
+                                         aria-labelledby="navbarDropdown2">
+                                        <a class="dropdown-item fierce-menu" href="governance-risk-compliance.html">Governance, Risk &amp; Compliance (GRC)</a>
+                                        <a class="dropdown-item fierce-menu" href="application-security-testing.html">Application Security Testing</a>
+                                        <a class="dropdown-item fierce-menu" href="it-operations-management.html">IT Operations Management</a>
+                                        <a class="dropdown-item fierce-menu" href="privilege-access-management.html">Privileged Access Management</a>
+                                        <a class="dropdown-item fierce-menu" href="identity-access-management.html">Identity Access Management</a>
+                                        <a class="dropdown-item fierce-menu" href="mobile-device-management.html">Mobile Device Management</a>
+                                        <a class="dropdown-item fierce-menu" href="endpoint-management.html">Endpoint Management</a>
+                                        <a class="dropdown-item fierce-menu" href="application-delivery-network.html">Application Delivery Network</a>
+                                        <a class="dropdown-item fierce-menu" href="network-monitoring.html">Network Monitoring</a>
+                                        <a class="dropdown-item fierce-menu" href="network-security.html">Network Security</a>
+                                        <a class="dropdown-item fierce-menu" href="web-application-firewall.html">Web Application Firewall</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="btn-talk ml-auto">
+                                <a class="nav-link contact" href="contact.html">Contact Us</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header-simple">
+        <div class="container">
+            <span class="eyebrow">Identity &amp; Access</span>
+            <h1>Identity Access Management</h1>
+        </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <section class="article-section">
+        <div class="container">
+            <article class="article-card" data-aos="fade-up">
+                <div class="article-hero-img">
+                    <img loading="lazy" decoding="async" src="../assets/images/Identity-and-Access-Management.jpeg"
+                         alt="Identity and Access Management illustration" />
+                </div>
+
+                <h2>Managing Digital Identities, Securely and at Scale</h2>
+
+                <p>Identity and access management tools are integral to maintaining data security
+in the enterprise. Here you’ll find information on passwords, authentication and
+Web access control.
+
+Identity and access management (IAM) is a framework for business processes that
+facilitates the management of electronic or digital identities. The framework
+includes the organizational policies for managing digital identity as well as
+the technologies needed to support identity management.</p>
+
+                <p>With IAM technologies, IT managers can control user access to critical
+information within their organizations. Identity and access management products
+offer role-based access control, which lets system administrators regulate
+access to systems or networks based on the roles of individual users within the
+enterprise.
+
+Having known access is the ability of an individual user to perform a specific
+task, such as view, create or modify a file. Therefore roles are defined
+according to job competency, authority and responsibility within the enterprise.</p>
+
+                <p>IAM technologies can be used to initiate, capture, record and manage user
+identities and their related access permissions in an automated manner. This
+ensures that access privileges are granted according to one interpretation of
+policy and all individuals and services are properly authenticated, authorized
+and audited. Since companies that properly manage identities have greater
+control of user access, they’re able to reduce the risks of internal and
+external data breaches.
+
+Automating IAM systems allows businesses to operate more efficiently by reducing
+the effort, time and money that would be required to manage access to their
+networks manually or via individual access controls that aren’t connected to
+centralized management systems.</p>
+
+                <p>Using a common platform for identity and access management enables the same
+security policies to be applied across all the different devices and operating
+platforms used by the enterprise. In terms of security, use of an IAM framework
+can make it easier to enforce policies around user authentication, validation
+and privileges and address issues regarding privilege creep.
+
+By implementing identity access management tools and following related best
+practices, your company can gain a competitive edge.</p>
+            </article>
+
+            <div class="article-cta">
+                <a class="cta-primary" href="contact.html">
+                    <i class="fas fa-paper-plane"></i> Talk to an Expert
+                </a>
+                <a class="cta-secondary" href="../contact.html">
+                    <i class="fas fa-file-alt"></i> Request a Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSTANT SECTION 1 — PRODUCT CATALOGUE -->
+    <section class="reference-catalogue">
+        <div class="container">
+            <div class="catalogue-layout">
+                <div class="catalogue-visual" data-reveal>
+                    <div class="catalogue-screen">
+                        <img loading="lazy" decoding="async" src="../assets/images/PremiumLogo-dark.png" alt="Premium Distribution">
+                        <strong>Technology Solutions<br>Catalogue</strong>
+                        <small>Secure. Connect. Grow.</small>
+                        <span class="catalogue-glow"></span>
+                    </div>
+                </div>
+                <div class="catalogue-copy" data-reveal>
+                    <p class="section-kicker">PRODUCT CATALOGUE</p>
+                    <h2>Explore Our Digital<br>Solutions Catalogue</h2>
+                    <p>Get detailed information on our solution portfolio, product specifications, and vendor
+                        offerings — all in one place.</p>
+                    <a class="reference-gold-button"
+                       href="../assets/downloads/premium-distribution-profile-2026.pptx"
+                       download="Premium-Distribution-Profile-2026.pptx">
+                        <i class="fas fa-download"></i> Download Catalogue (PPTX)
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a class="preview-link" href="digital-solution.html">
+                        <i class="fas fa-eye"></i> Preview Catalogue
+                    </a>
+                </div>
+                <ul class="catalogue-benefits" data-reveal>
+                    <li><i class="far fa-file-alt"></i><span><b>Solution overviews</b>Understand our offerings at a glance.</span></li>
+                    <li><i class="fas fa-shield-alt"></i><span><b>Product specifications</b>Get detailed technical information.</span></li>
+                    <li><i class="far fa-handshake"></i><span><b>Vendor information</b>Trusted global technology brands.</span></li>
+                    <li><i class="far fa-check-circle"></i><span><b>Use cases &amp; benefits</b>See real-world impact.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER LOGOS -->
+    <section class="reference-customers" aria-labelledby="customer-logos-title">
+        <div class="container">
+            <div class="customer-logos-layout">
+                <div class="customer-logos-intro" data-reveal>
+                    <p class="section-kicker">OUR CUSTOMERS</p>
+                    <h2 id="customer-logos-title">Trusted by Leading<br>Organisations.</h2>
+                    <p>Businesses, financial institutions and public-sector organisations across Africa trust our
+                        technology solutions and support.</p>
+                </div>
+    
+                <div class="customer-logo-list" data-reveal aria-label="Premium Distribution customers">
+                    <div class="customer-logo-track">
+                        <div class="customer-logo-set">
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt="GTBank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt="IITA"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt="Optimus Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt="TAJ Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt="Bodiva"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt="ECOWAS"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/first-atlantic.png" alt="First Atlantic Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/orange-bank.png" alt="Orange Bank"></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/sanlam.png" alt="Sanlam"></div>
+                        </div>
+                        <div class="customer-logo-set" aria-hidden="true">
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/gtb-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/iita-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/optimus-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/taj-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/bodiva-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/ecowas-removebg-preview.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/first-atlantic.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/orange-bank.png" alt=""></div>
+                            <div class="customer-logo-tile"><img loading="lazy" decoding="async" src="../assets/images/sanlam.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSTANT SECTION 3 — FOOTER -->
+    <footer class="reference-footer">
+        <div class="container">
+            <div class="reference-footer-top">
+                <a href="../index.html">
+                    <img loading="lazy" decoding="async" src="../assets/images/PremiumLogo-dark.png" alt="Premium Distribution logo">
+                </a>
+                <span>Technology Distribution &amp; Cybersecurity</span>
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html#solutions">Solutions</a>
+                    <a href="Bepartner.html">Vendors</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div>
+                    <a href="https://www.linkedin.com/company/premiumdistis/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="reference-footer-bottom">
+                <span>&copy; 2026 Premium Distribution. All rights reserved.</span>
+                <span>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/custom-script.js"></script>
+    <script src="../assets/js/vanilla-navigation.js"></script>
+    <script src="../assets/js/owl.carousel.js"></script>
+    <script src="../assets/js/text-animations.js"></script>
+    <script src="../assets/js/client.js"></script>
+    <script src="../assets/js/premium-scroll.js"></script>
+    <script defer src="../assets/js/ai-widget.js"></script>
+
+    <!-- Active nav-link -->
+    <script>
+        (function () {
+            var path = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (!href || href === '#' || /^https?:/.test(href)) return;
+                if (href.split('/').pop() === path) {
+                    link.closest('.nav-item').classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
